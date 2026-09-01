@@ -1,4 +1,3 @@
-# dit-garment
 <div align="center">
   <h1>DiT-Garment: Garment Dynamics with Diffusion Transformers</h1>
 
