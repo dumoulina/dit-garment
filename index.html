@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DiT-Garment: Garment Dynamics with Diffusion Transformers">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D-Garment</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans%7CNoto+Sans%7CCastoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/versions/bulma-no-dark-mode.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <meta name="google-site-verification" content="tzhmLkVgDJCilaMpyN3p25oAQ8dkQmwWuQwowqTLERQ">
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">DiT-Garment: Garment Dynamics with Diffusion Transformers</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dumoulin.me/">Antoine Dumoulin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.inrialpes.fr/sed/people/boissieux">Laurence Boissieux</a><sup>1</sup>,
+            </span><br>
+            <span class="author-block">
+              <a href="https://joaoregateiro.github.io/">Joao Regateiro</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.irisa.fr/Pierre.Hellier">Pierre Hellier</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://swuhrer.gitlabpages.inria.fr/website">Stefanie Wuhrer</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Inria Centre at the University Grenoble Alpes</span><br>
+            <span class="author-block"><sup>2</sup>Inria, University of Rennes, CNRS, IRISA-UMR 6074</span>
+            <span class="author-block"><sup>3</sup>Interdigital Inc.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="is-size-5 publication-venue">
+              Arxiv 2026
+            </div>
+          </div>
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              // <span class="link-block">
+              //   <a href=""
+              //      class="external-link button is-normal is-rounded is-dark">
+              //     <span class="icon">
+              //         <i class="fas fa-file"></i>
+              //     </span>
+              //     <span>Review</span>
+              //   </a>
+              // </span>
+              // <span class="link-block">
+              //   <a href=""
+              //      class="external-link button is-normal is-rounded is-dark">
+              //     <span class="icon">
+              //         <i class="fas fa-file-pdf"></i>
+              //     </span>
+              //     <span>HAL</span>
+              //   </a>
+              // </span>
+              // <span class="link-block">
+              //   <a href=""
+              //      class="external-link button is-normal is-rounded is-dark">
+              //     <span class="icon">
+              //         <i class="ai ai-arxiv"></i>
+              //     </span>
+              //     <span>arXiv</span>
+              //   </a>
+              // </span>
+              <span class="link-block">
+                <a href="https://github.com/dumoulina/dit-garment"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              // <span class="link-block">
+              //   <a href=""
+              //      class="external-link button is-normal is-rounded is-dark">
+              //     <span class="icon">
+              //         <i class="fa fa-database"></i>
+              //     </span>
+              //     <span>Dataset</span>
+              //     </a>
+              // </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<div class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <figure>
+      <img src="./static/images/teaser.png" alt="Teaser" style="background-color:white;">
+    </figure>
+    </div>
+  </div>
+</div>
+<!--/ Teaser -->
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present DiT-Garment to model dynamic 3D clothing over human body models in arbitrary motion. Unlike existing methods, DiT-Garment can animate garments with unseen designs and physical materials, while allowing for direct inference of deformations for any target pose. To achieve this, we leverage a 2D diffusion transformer architecture to learn 3D deformations in a 2D UV-space. As the result is non-deterministic, our generative model learns the distribution of possible outcomes. The template garment is represented as a 3D triangle mesh spatially aligned with a 3D human body model in a standardized pose. To work with different garment designs without the need of a common template or complex graph convolution operations, the diffusion transformer is conditioned on a 3D position map of the template, represented in UV-space, which allows to implicitly learn a deformation of the 3D space around the body in standard pose. Further conditioning on body motion and physical parameters allows to physically ground the model. We quantitatively and qualitatively evaluate DiT-Garment on both synthetic and real data. While only trained on synthetic simulations of automatically generated cloth designs, our method generalizes to captured and artist-made garment designs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Abstract -->
+
+<!-- Overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            
+          </p>
+        </div>
+        
+
+        <figure>
+          <img src="./static/images/overview.svg" alt="Model overview" style="background-color:white;">
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Overview -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Video</h2>
+    </div>
+    <div class="publication-video">
+      <video controls muted loop playsinline>
+        <source src="./static/video.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <p>
+      If you find our work useful, consider citing:
+    </p>
+<pre><code>@misc{dumoulin2026ditgarment,
+  title={DiT-Garment: Garment Dynamics with Diffusion Transformers},
+  author={Dumoulin, Antoine and Boissieux, Laurence and Joao, Regateiro and Hellier, Pierre and Wuhrer, Stefanie}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is based on the
+            <a href="https://github.com/nerfies/nerfies.github.io">nerfies template</a>
+            licensed under
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
