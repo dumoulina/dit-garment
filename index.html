@@ -119,7 +119,8 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
     <figure>
-      <img src="./static/images/teaser.png" alt="Teaser" style="background-color:white;">
+      <img src="./images/teaser.webp" alt="Teaser" style="background-color:white;">
+        DiT-Garment animates arbitrary garment designs over any human body in any target pose. Given a body motion and physical parameters, DiT-Garment directly infers dynamic garment deformations for a design seen during training (left) and generalizes to three unseen designs (right), without retraining.
     </figure>
     </div>
   </div>
@@ -150,19 +151,13 @@
       <div class="column">
         <h2 class="title is-3">Overview</h2>
 
-        <div class="content has-text-justified">
-          <p>
-            
-          </p>
-        </div>
-        
-
         <figure>
-          <img src="./static/images/overview.svg" alt="Model overview" style="background-color:white;">
+          <img src="./images/model.svg" alt="Model overview" style="background-color:white;">
         </figure>
+
         <div class="content has-text-justified">
           <p>
-            
+              DiT-Garment generates garment deformations for a given template representing a garment design conditioned on body shape β, motion θ<sub>t-l:t</sub> and cloth material γ. It builds upon a 2D diffusion transformer model (DiT) to learn how to deform a template in UV-space. 3D geometric features are parameterized by the UV parametrization of the template, and we concatenate the position map to the diffusion noise. Our model infers the garment dynamics by iteratively denoising the Gaussian noise to the displacement&nbsp;map.
           </p>
         </div>
 
@@ -179,7 +174,7 @@
     </div>
     <div class="publication-video">
       <video controls muted loop playsinline>
-        <source src="./static/video.mp4"
+        <source src="./images/video.mp4"
                 type="video/mp4">
       </video>
     </div>
