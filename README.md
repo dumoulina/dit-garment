@@ -11,7 +11,7 @@
 
   <p align="center" style="margin: 2em auto;">
     <a href='https://dumoulina.github.io/dit-garment/'><img alt="Project website" src="https://img.shields.io/badge/Project_page-%20green"></a>
-    <a href='https://arxiv.org/'><img src='https://img.shields.io/badge/arXiv-Paper PDF-red?style=flat&logo=arXiv&logoColor=green' alt='Arxiv'></a>
+    <a href='https://doi.org/10.48550/arXiv.2609.18510'><img src='https://img.shields.io/badge/arXiv-Paper PDF-red?style=flat&logo=arXiv&logoColor=green' alt='Arxiv'></a>
     <!-- <a href=''><img src='https://img.shields.io/badge/Dataset-blue' alt='Dataset'></a> -->
   </p>
 
@@ -19,9 +19,12 @@
 
 # Citation
 ```
-@article{dumoulin2026ditgarment,
-  title={DiT-Garment: Garment Dynamics with Diffusion Transformers},
-  author={Dumoulin, Antoine and Boissieux, Laurence and Joao, Regateiro and Hellier, Pierre and Wuhrer, Stefanie}
+@misc{dumoulin2026ditgarment,
+  title={DiT-Garment: Garment Dynamics with Diffusion Transformers}, 
+  author={Antoine Dumoulin and Laurence Boissieux and Joao Regateiro and Pierre Hellier and Stefanie Wuhrer},
+  journal={arXiv preprint arXiv:2609.18510},
+  year={2026},
+  url={https://doi.org/10.48550/arXiv.2609.18510}, 
 }
 ```
 
