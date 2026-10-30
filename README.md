@@ -12,7 +12,7 @@
   <p align="center" style="margin: 2em auto;">
     <a href='https://dumoulina.github.io/dit-garment/'><img alt="Project website" src="https://img.shields.io/badge/Project_page-%20green"></a>
     <a href='https://doi.org/10.48550/arXiv.2609.18510'><img src='https://img.shields.io/badge/arXiv-Paper PDF-red?style=flat&logo=arXiv&logoColor=green' alt='Arxiv'></a>
-    <!-- <a href=''><img src='https://img.shields.io/badge/Dataset-blue' alt='Dataset'></a> -->
+        <a href='https://entrepot.recherche.data.gouv.fr/dataset.xhtml?persistentId=doi:10.57745/PPBQAZ'><img src='https://img.shields.io/badge/Dataset-blue' alt='Dataset'></a>
   </p>
 
 </div>
